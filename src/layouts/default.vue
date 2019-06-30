@@ -38,19 +38,20 @@ mounted(){
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">
               <img class="logo" src="@/assets/logo.png" alt="">
-              Localization
+              {{ $t('navbar.appname') }}
         </a>
         <div class="nav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
+                    <router-link class="nav-link" to="/">{{ $t('navbar.home') }} <span class="sr-only">(current)</span></router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/about">About <span class="sr-only">(current)</span></router-link>
+                    <router-link class="nav-link" to="/about">{{ $t('navbar.about') }} <span class="sr-only">(current)</span></router-link>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <flag :iso="locale.iso"></flag>{{ locale.code }}
+                    <flag :iso="locale.iso"></flag>
+                    <!-- {{ locale.code }} -->
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a v-for="(lang, i) in languages" :key="i" class="dropdown-item" href="#"
